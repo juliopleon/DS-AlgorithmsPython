@@ -81,3 +81,5 @@ def insert(self, index, value):
     temp = self.get(index - 1)
     new_node.next = temp.next
     temp.next = new_node
+    self.length += 1
+    return True
