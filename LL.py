@@ -69,7 +69,7 @@ def set_value(self, index, value):
 
 
 def insert(self, index, value):
-    if index > self.length or index < 0:
+    if index >= self.length or index < 0:
         return False
     # if adding to beginning
     if index == 0:
@@ -83,3 +83,17 @@ def insert(self, index, value):
     temp.next = new_node
     self.length += 1
     return True
+
+
+def remove(self, index):
+    if index < 0 or index >= self.length:
+        return None
+    if index == 0:
+        return self.pop_first()
+    if index == self.length:
+        return self.pop()
+    prev = self.get(index - 1)
+    temp = prev.next
+    temp.next = None
+    self.length -= 1
+    return temp
