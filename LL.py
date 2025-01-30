@@ -110,6 +110,20 @@ def reverse(self):
         temp.next = before
         temp = after
 
+# common interview question reverse LL
+
+
+def reverse(self):
+    temp = self.head
+    self.head = self.tail
+    self.tail = temp
+    after = temp.next
+    before = None
+    for _ in range(self.length):
+        after = temp.next
+        temp.next = before
+        temp = after
+
 
 def reverse(self):
     temp = self.head
