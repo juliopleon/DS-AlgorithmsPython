@@ -54,7 +54,7 @@ def prepend(self, value):
         self.head = new_node
         self.tail = new_node
     else:
-        new_node = self.head
+        new_node.next = self.head
         self.head = new_node
     self.length += 1
     return True
