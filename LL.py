@@ -90,7 +90,7 @@ def set_value(self, index, value):
 
 
 def insert(self, index, value):
-    if index >= self.length or index < 0:
+    if index > self.length or index < 0:
         return False
     # if adding to beginning
     if index == 0:
