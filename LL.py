@@ -160,6 +160,8 @@ def reverse(self):
         temp.next = before
         temp = after
 
+# find the middle node in a LL
+
 
 def find_middle_node(self):
     slow = self.head
@@ -168,3 +170,15 @@ def find_middle_node(self):
         slow = slow.next
         fast = fast.next.next
     return slow
+
+
+def has_loop(self):
+    slow = self.head
+    fast = self.head
+    while fast is not None and fast.next is not None:
+        slow = slow.next
+        fast = fast.next.next
+        if slow == fast:
+            return True
+        if fast is None:
+            return False
