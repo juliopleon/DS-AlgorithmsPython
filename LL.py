@@ -171,6 +171,8 @@ def find_middle_node(self):
         fast = fast.next.next
     return slow
 
+# find is LL has a loop
+
 
 def has_loop(self):
     slow = self.head
@@ -182,3 +184,18 @@ def has_loop(self):
             return True
         if fast is None:
             return False
+
+# Find Kth Node from End
+
+
+def find_kth_from_end(ll, k):
+    slow = ll.head
+    fast = ll.head
+    for _ in range(k):
+        if fast is None:
+            return None
+        fast = fast.next
+    while fast is not None:
+        slow = slow.next
+        fast = fast.next
+    return slow
