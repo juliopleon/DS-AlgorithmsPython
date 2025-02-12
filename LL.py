@@ -199,3 +199,16 @@ def find_kth_from_end(ll, k):
         slow = slow.next
         fast = fast.next
     return slow
+
+
+def find_kth_from_end(ll, k):
+    slow = ll.head
+    fast = ll.head
+    for _ in range(k):
+        if fast is None:
+            return None
+        fast = fast.next
+    while fast is not None and fast.next is not None:
+        slow = slow.next
+        fast = fast.next
+    return slow
