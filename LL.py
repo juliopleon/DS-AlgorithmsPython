@@ -200,15 +200,18 @@ def find_kth_from_end(ll, k):
         fast = fast.next
     return slow
 
+# remove duplicates from LL
 
-def find_kth_from_end(ll, k):
-    slow = ll.head
-    fast = ll.head
-    for _ in range(k):
-        if fast is None:
-            return None
-        fast = fast.next
-    while fast is not None and fast.next is not None:
-        slow = slow.next
-        fast = fast.next
-    return slow
+
+def remove_duplicates(self):
+    values = set()
+    prev = None
+    current = self.head
+    while current:
+        if current.value in values:
+            prev.next = current.next
+            self.length -= 1
+        else:
+            values.add(current.value)
+            prev = current
+            current = current.next
