@@ -215,3 +215,14 @@ def remove_duplicates(self):
             values.add(current.value)
             prev = current
             current = current.next
+
+# Binary number to a decimal
+
+
+def binary_to_decimal(self):
+    num = 0
+    current = self.head
+    while current is not None:
+        num = num * 2 + current.value
+        current = current.next
+    return num
