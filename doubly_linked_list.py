@@ -41,8 +41,8 @@ class DoublyLinkedList:
             self.tail = self.tail.prev
             self.tail.next = None
             temp.prev = None
-            self.length -= 1
-            return temp
+        self.length -= 1
+        return temp
 
     def prepend(self, value):
         new_node = Node(value)
@@ -73,7 +73,7 @@ class DoublyLinkedList:
     def get(self, index):
         if self.length == 0:
             return None
-        if index < self.length/2:
+        if index > self.length/2:
             temp = self.head
             for _ in range(index):
                 temp = temp.next
